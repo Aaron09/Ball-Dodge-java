@@ -1,2 +1,2 @@
-# Ball-Dodge-java
-A game in which one dodges balls, made in java.
+# USA Minesweeper
+My first major project: a GUI-based minesweeper game employing USA flags. 
