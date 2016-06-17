@@ -28,6 +28,7 @@ public class MineScreen extends JPanel{
 		
 		public MineScreen(){
 		
+			
 			//creates the panel that holds the bomb grid
 			setLayout(new GridLayout(diffWidth,diffHeight));
 	
@@ -45,6 +46,7 @@ public class MineScreen extends JPanel{
 			setVisible(true);
 			
 		}
+				
 		public void revealBoard(ArrayList<ButtonInterface>list){
 			for(int i=0; i<list.size(); i++){
 				list.get(i).iconSetter();
@@ -61,15 +63,18 @@ public class MineScreen extends JPanel{
 			return initBombs - totalFlagged;
 				
 		}
+		
 		public ArrayList<ButtonInterface> resetList(){
 				return new ArrayList<ButtonInterface>(diffWidth*diffHeight);
 		}
+		
 		public void clearPanel(ArrayList<ButtonInterface>list){
 			for(int i=0; i<list.size(); i++){
 				this.remove((JButton)list.get(i));
 			}
 			
 		}
+		
 		public int countInitialBombs(ArrayList<ButtonInterface>list){
 			int BOMBS = 0;
 			for (int i=0; i<list.size(); i++){
@@ -117,6 +122,7 @@ public class MineScreen extends JPanel{
 				y+=16;
 			}	
 		}
+		
 		public static int setBombsNum(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth, int dHeight){
 			
 			if(i==0){
@@ -157,39 +163,6 @@ public class MineScreen extends JPanel{
 			
 		}
 		
-		
-		/*public static int setBombsNum(ArrayList<generalButton>list, int i, mineButton mineB, int bTotal, int dWidth){
-		
-			if(i==0){
-				bTotal = bombTopLeft(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i>0 && i<15){
-				bTotal = bombTopRow(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i==15){
-				bTotal = bombTopRight(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i==240){
-				bTotal = bombBottomLeft(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i>240 && i<255){
-				bTotal = bombBottomRow(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i==255){
-				bTotal = bombBottomRight(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i==16||i==32||i==48||i==64||i==80||i==96||i==112||i==128||i==144||i==160||i==176||i==192||i==208||i==224||i==240){
-				bTotal = bombLeftCol(list,i,mineB,bTotal,dWidth);
-			}
-			else if(i==31||i==47||i==63||i==79||i==95||i==111||i==127||i==143||i==159||i==175||i==191||i==207||i==223||i==239||i==255){
-				bTotal = bombRightCol(list,i,mineB,bTotal,dWidth);
-			}
-			else{
-				bTotal = bombElsewhere(list,i,mineB,bTotal,dWidth);
-			}
-			return bTotal;
-			
-		}*/
 		public static int bombTopLeft(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -202,6 +175,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombTopRight(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i-1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -214,6 +188,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombTopRow(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -232,6 +207,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombBottomRight(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i-1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -244,6 +220,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombBottomLeft(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -256,6 +233,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombBottomRow(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -274,6 +252,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombLeftCol(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -292,6 +271,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombRightCol(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i-1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -310,6 +290,7 @@ public class MineScreen extends JPanel{
 			}
 			return bTotal;
 		}
+		
 		public static int bombElsewhere(ArrayList<ButtonInterface>list, int i, MineButton mineB, int bTotal, int dWidth){
 			if (list.get(i+1).getID() == 2){
 				bTotal = bTotal + 1;
@@ -338,11 +319,12 @@ public class MineScreen extends JPanel{
 			return bTotal;
 		}
 		
-		
 		public int getHeight(){
 			return h;
 		}
+		
 		public int getWidth(){
 			return w;
 		}
+		
 }

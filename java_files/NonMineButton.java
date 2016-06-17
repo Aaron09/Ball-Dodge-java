@@ -13,12 +13,13 @@ public class NonMineButton extends JButton implements MouseListener, ButtonInter
 		/**
 	 * 
 	 */
-//	private static final long serialVersionUID = 5483424835111220983L;
+	private static final long serialVersionUID = 5483424835111220983L;
 	
 		ImageIcon flag, numZero, numOne, numTwo, numThree, numFour, numFive, numSix, numSeven, numEight;
 		int numBombs = 0;
 		int clickCount = 1;
 		boolean flagged = false;
+		final boolean found = false;
 		
 		public NonMineButton(int bombTotal){
 			
@@ -38,6 +39,9 @@ public class NonMineButton extends JButton implements MouseListener, ButtonInter
 		}
 		public boolean getFlagged(){
 			return flagged;
+		}
+		public boolean getFound(){
+			return found;
 		}
 		//ID number associated with the nonMineButtons
 		public int getID(){

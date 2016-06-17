@@ -19,6 +19,7 @@ public class MineButton extends JButton implements MouseListener, ButtonInterfac
 	ImageIcon bombIcon, flag;
 	int clickCount = 1;
 	boolean flagged = false;
+	boolean found = false;
 
 	
 	public MineButton(){
@@ -28,6 +29,9 @@ public class MineButton extends JButton implements MouseListener, ButtonInterfac
 		addMouseListener(this);
 		
 		
+	}
+	public boolean getFound(){
+		return found;
 	}
 	public boolean getFlagged(){
 		return flagged;
@@ -53,10 +57,12 @@ public class MineButton extends JButton implements MouseListener, ButtonInterfac
 				setIcon(flag);
 				clickCount++;
 				flagged = true;
+				found = true;
 			} else if(clickCount == 2){
 				setIcon(null);
 				clickCount--;
 				flagged = false;
+				found = false;
 			}
 		}
 	}
