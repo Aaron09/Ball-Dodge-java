@@ -150,7 +150,7 @@ public class MineBoard{
 		JLabel endLabel = new JLabel();
 	
 		if(victory == true){
-			endLabel.setText("Congratualtions! You successfully found all " + initialB + " bombs!");
+			endLabel.setText("Congratulations! You successfully found all " + initialB + " bombs!");
 		}
 		if(victory == false){
 			endLabel.setText("You Lost.");
@@ -158,7 +158,7 @@ public class MineBoard{
 		
 		endPanel.add(endLabel);
 		endFrame.add(endPanel);
-		endFrame.setSize(200, 200);
+		endFrame.setSize(500, 200);
 		endFrame.setVisible(true);
 	}
 	
